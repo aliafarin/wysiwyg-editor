@@ -1,0 +1,90 @@
+body {
+  direction: rtl
+}
+
+.my-carousel {
+  width: 60vw;
+  height: 100vh;
+}
+
+.my-carousel img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#login-page {
+  display: flex;
+}
+
+.login-section {
+  width: 40vw;
+}
+
+.login-form {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.name {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.login-form input:first-child {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.login-form input {
+  margin: 5px;
+  border-radius: 0.4rem;
+}
+
+.ant-checkbox-wrapper {
+  margin-top: 15px;
+  margin-right: 15px !important;
+}
+
+.ant-btn {
+  border-radius: 1rem !important;
+  display: block;
+  margin-right: auto !important;
+  width: 80px !important;
+}
+
+.login-form a {
+  margin-top: 50px;
+}
+
+@media ( max-width: 802px ) {
+
+  .my-carousel {
+    width: 50vw;
+  }
+
+  .login-section {
+    width: 50vw;
+  }
+
+  .login-form {
+    max-width: 250px;
+  }
+
+}
+
+@media ( max-width: 593px ) {
+
+  .my-carousel {
+    display: none;
+  }
+
+  .login-section {
+    width: 100%;
+  }
+
+}
