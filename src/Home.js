@@ -1,5 +1,8 @@
 import React from 'react';
-import JoditEditor from "jodit-react";
+// import JoditEditor from "jodit-react";
+
+import SunEditor, { buttonList } from 'suneditor-react';
+import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 
 class Home extends React.Component {
   
@@ -7,20 +10,29 @@ class Home extends React.Component {
 
   constructor() {
     super();
-    this.config = {
-      readonly: false, // all options from https://xdsoft.net/jodit/doc/
-      direction: "rtl",
-      "buttons": "|,bold,strikethrough,underline,|,|,ul,ol,|,|,font,fontsize,brush,paragraph,|,image,file,table,link,|,align,undo,redo,\n,selectall,copy,|"
-    }
+
   }
+
+  handleChange = (content) => {
+    this.setState({ content });
+  }
+
   render() {
     console.log(this.state.content);
     return (
-      <JoditEditor
-        value={this.state.content}
-        config={this.config}
-        tabIndex={1} // tabIndex of textarea
-        onChange={newContent => this.setState({ content: newContent })}
+      <SunEditor
+        setContents={this.state.content}
+        setOptions={{
+          height: 200, 
+          buttonList: [['undo', 'redo'], ['formatBlock', 'font', 'align', 'fontSize', 'bold', 'underline', 'strike','fontColor', 'hiliteColor'], ['list', 'link'], ['indent', 'outdent'],['image', 'video'], ['table'], ['print'], ['fullScreen']],
+          font: [
+          'Arial',
+          'tohoma',
+          'Courier New,Courier'
+          ]
+          }}
+        setDefaultStyle="text-align: right; font-size: 20px"  
+        onChange={this.handleChange}
       />
     );
   }	
