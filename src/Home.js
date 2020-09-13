@@ -23,15 +23,15 @@ class Home extends React.Component {
       <SunEditor
         setContents={this.state.content}
         setOptions={{
-          height: 200, 
-          buttonList: [['undo', 'redo'], ['formatBlock', 'font', 'align', 'fontSize', 'bold', 'underline', 'strike','fontColor', 'hiliteColor'], ['list', 'link'], ['indent', 'outdent'],['image', 'video'], ['table'], ['print'], ['fullScreen']],
+          height: 500, 
+          buttonList: [['undo', 'redo'], ['formatBlock', 'font', 'align', 'fontSize', 'bold', 'underline', 'strike','fontColor', 'hiliteColor'], ['list', 'link'], ['indent', 'outdent'],['image', 'video'], ['table'], ['print']],
           font: [
           'Arial',
           'tohoma',
           'Courier New,Courier'
           ]
           }}
-        setDefaultStyle="text-align: right; font-size: 20px"  
+        setDefaultStyle="direction: rtl; text-align: right; font-size: 20px"  
         onChange={this.handleChange}
       />
     );
